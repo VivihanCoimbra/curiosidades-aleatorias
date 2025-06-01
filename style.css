@@ -1,0 +1,226 @@
+/* Reset básico: remove margens e paddings padrão, define fonte */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: cursive;
+}
+/* Define cor de fundo para todo o body */
+body {
+    background-color: #dedddb;
+}
+/* Centraliza o conteúdo do header */
+header {
+    text-align: center;
+}
+/* Estiliza o conteúdo principal (main) */
+main {
+    text-align: center;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    font-size: larger;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-bottom: 1px solid black;
+}
+/* Estiliza o menu de navegação */
+nav {
+    font-size: larger;
+    padding-top: 2rem;
+    text-align: center;
+    margin-bottom: 7rem;
+}
+/* Estiliza a lista de categorias com Flexbox para organizar horizontalmente */
+.categorias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+}
+/* Estiliza os links das categorias */
+.categ > a {
+    background-color: #e7943a;
+    border-radius: 10px;
+    color: black;
+    display: inline-block;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    font-size: larger;
+    font-weight: 700;
+}
+/* Estiliza os parágrafos dentro de details */
+details > p {
+    padding-top: 0.5rem;
+    padding-bottom: 2rem;
+    font-size: 1.2rem;
+}
+/* Deixa o summary (título do details) em negrito */
+details > summary {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+/* Estiliza o rodapé */
+footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 1rem;
+    background-color: black;
+    color: white;
+}
+/* Estilização da seção de tabela de bares */
+.tabela-bares h2 {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 2rem;
+    color: black;
+    font-weight: bold;
+}
+/* Estilo da tabela */
+table {
+    width: 90%;
+    margin: 2rem auto;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+/* Estilo das células da tabela */
+th, td {
+    border: 1px solid #333;
+    padding: 0.8rem;
+    text-align: left;
+}
+/* Estilo do cabeçalho da tabela */
+th {
+    background-color: #e7943a;
+    color: white;
+}
+/* Links dentro da tabela */
+td a {
+    color: #e7943a;
+    text-decoration: none;
+    font-weight: bold;
+}
+/* Efeito hover nos links da tabela */
+td a:hover {
+    text-decoration: underline;
+}
+/* Estilo do título do player */
+.spotify-player {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+    padding: 2rem;
+    justify-items: center;
+    text-align: center;
+}
+/* Estilo do título do player */
+.spotify-player h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #e7943a;
+}
+/* Estilo do iframe do player */
+.spotify-player iframe {
+    width: 100%;
+    max-width: 600px;
+}
+/* Para telas pequenas (até 768px) */
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        padding: 1rem;
+        background-color: #fff;
+    }
+
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        top: 0.8rem;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+}
+/* Ajustes para telas muito pequenas (até 600px) */
+@media (max-width: 600px) {
+  main {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  nav {
+    font-size: 1rem;
+    margin-bottom: 4rem;
+  }
+
+  .categ > a {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .categorias > li {
+    display: block;
+    margin: 1rem auto;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+}
+
+/* Telas médias (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  main {
+    padding: 2rem;
+    font-size: 1.1rem;
+  }
+
+  nav {
+    font-size: 1.1rem;
+    margin-bottom: 5rem;
+  }
+
+  .categ > a {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+
+  .categorias > li {
+    margin: 1.5rem;
+  }
+}
+
+/* Telas grandes (desktops) */
+@media (min-width: 1025px) {
+  main {
+    padding: 3rem;
+    font-size: 1.2rem;
+  }
+/* Efeito de hover nas categorias */
+  .categ > a:hover {
+    background-color: #cf8127;
+    color: white;
+    transition: 0.3s;
+  }
+}
